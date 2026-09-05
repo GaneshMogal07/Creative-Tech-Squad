@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ctsGradW" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9353FF"/>
+      <stop offset="45%" stop-color="#389BFF"/>
+      <stop offset="100%" stop-color="#11C5E8"/>
+    </linearGradient>
+    <linearGradient id="arrowGradW" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#007EFA"/>
+      <stop offset="100%" stop-color="#11C5E8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Group: Emblem Icon -->
+  <g transform="translate(10, 8)">
+    <rect x="0" y="34" width="5" height="5" rx="1" fill="#9353FF"/>
+    <rect x="7" y="28" width="6" height="6" rx="1.2" fill="#9353FF"/>
+    <rect x="7" y="40" width="6" height="6" rx="1.2" fill="#9353FF"/>
+    <rect x="15" y="34" width="6.5" height="6.5" rx="1.5" fill="#9353FF"/>
+    <rect x="15" y="46" width="6.5" height="6.5" rx="1.5" fill="#A86EFF"/>
+
+    <circle cx="27" cy="18" r="4.5" fill="#9353FF"/>
+    <circle cx="43" cy="11" r="5" fill="#389BFF"/>
+    <circle cx="56" cy="18" r="4.5" fill="#11C5E8"/>
+
+    <path d="M 22 28 C 22 28, 16 38, 20 48 C 24 57, 34 63, 44 61 C 51 59, 56 55, 59 50 C 56 50, 48 53, 41 51 C 33 49, 29 42, 29 36 C 29 31, 33 26, 36 24 C 33 25, 26 25, 22 28 Z" fill="url(#ctsGradW)"/>
+    <path d="M 33 21 C 41 18, 51 22, 53 28 C 55 33, 51 39, 44 42 C 38 45, 33 43, 33 43 C 33 43, 38 38, 41 34 C 44 30, 41 24, 33 21 Z" fill="url(#ctsGradW)"/>
+    <path d="M 43 45 L 59 40 L 53 58 L 49 50 L 41 53 Z" fill="url(#arrowGradW)"/>
+    <path d="M 52 24 C 54 23, 58 24, 59 28 C 60 31, 58 35, 55 38 L 50 33 C 52 30, 52 26, 52 24 Z" fill="#11C5E8"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(88, 14)">
+    <text x="0" y="19" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF" letter-spacing="-0.4">Creative</text>
+    <text x="0" y="38" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="20" fill="#11C5E8" letter-spacing="-0.4">Tech</text>
+    <text x="0" y="57" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF" letter-spacing="-0.4">Squad</text>
+  </g>
+</svg>
