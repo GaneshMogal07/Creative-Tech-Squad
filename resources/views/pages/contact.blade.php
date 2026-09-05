@@ -3,9 +3,8 @@
 @section('title', 'Contact Us — Creative Tech Squad')
 
 @section('content')
-<section class="hero-section" style="padding-bottom:40px;">
-  <div class="hero-glow"></div>
-  <div class="container text-center hero-content container-narrow">
+<section class="hero-section text-center">
+  <div class="container container-narrow">
     <span class="eyebrow">Connect with CTS</span>
     <h1 class="hero-title">Let’s Build Something <br><span class="gradient-accent">Truly Useful Together.</span></h1>
     <p class="section-subtitle mx-auto">
@@ -14,47 +13,47 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:20px; background:var(--cts-white);">
+<section class="section" style="padding-bottom:100px;">
   <div class="container">
-    <div class="grid grid-2" style="gap:50px;">
+    <div class="grid grid-2" style="gap:40px; align-items:flex-start;">
       
       <!-- Contact Information Card -->
-      <div>
-        <div class="card card-glass" style="padding:40px; margin-bottom:30px;">
-          <h3 style="font-size:1.5rem; margin-bottom:20px; color:var(--cts-navy);">Direct Channels</h3>
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <div class="card" style="padding:36px;">
+          <h3 style="font-size:1.5rem; font-weight:700; margin-bottom:20px; color:var(--apple-text-primary);">Direct Channels</h3>
           
-          <div style="display:flex; flex-direction:column; gap:24px;">
+          <div style="display:flex; flex-direction:column; gap:20px;">
             <div style="display:flex; align-items:flex-start; gap:16px;">
-              <div style="width:44px; height:44px; border-radius:12px; background:var(--cts-blue-light); color:var(--cts-blue); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">
+              <div style="width:44px; height:44px; border-radius:12px; background:#e8f4fd; color:#0071e3; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">
                 📧
               </div>
               <div>
-                <div style="font-size:0.85rem; color:#64748B; font-weight:600; text-transform:uppercase;">Email Us</div>
-                <a href="mailto:{{ \App\Models\Setting::get('contact_email', 'creativetechsquad.official@gmail.com') }}" style="font-size:1.05rem; font-weight:700; color:var(--cts-navy);">
+                <div style="font-size:0.8rem; color:var(--apple-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Email Us</div>
+                <a href="mailto:{{ \App\Models\Setting::get('contact_email', 'creativetechsquad.official@gmail.com') }}" style="font-size:1rem; font-weight:700; color:var(--apple-text-primary);">
                   {{ \App\Models\Setting::get('contact_email', 'creativetechsquad.official@gmail.com') }}
                 </a>
               </div>
             </div>
 
             <div style="display:flex; align-items:flex-start; gap:16px;">
-              <div style="width:44px; height:44px; border-radius:12px; background:var(--cts-purple-light); color:var(--cts-purple); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">
+              <div style="width:44px; height:44px; border-radius:12px; background:#f3e8ff; color:#7b2cff; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">
                 📞
               </div>
               <div>
-                <div style="font-size:0.85rem; color:#64748B; font-weight:600; text-transform:uppercase;">Call / WhatsApp</div>
-                <a href="tel:{{ \App\Models\Setting::get('contact_phone', '+919511951568') }}" style="font-size:1.05rem; font-weight:700; color:var(--cts-navy);">
+                <div style="font-size:0.8rem; color:var(--apple-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Call / WhatsApp</div>
+                <a href="tel:{{ \App\Models\Setting::get('contact_phone', '+919511951568') }}" style="font-size:1rem; font-weight:700; color:var(--apple-text-primary);">
                   {{ \App\Models\Setting::get('contact_phone', '+91 95119 51568') }}
                 </a>
               </div>
             </div>
 
             <div style="display:flex; align-items:flex-start; gap:16px;">
-              <div style="width:44px; height:44px; border-radius:12px; background:#DCFCE7; color:#166534; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">
+              <div style="width:44px; height:44px; border-radius:12px; background:#e6f9ed; color:#34c759; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">
                 📍
               </div>
               <div>
-                <div style="font-size:0.85rem; color:#64748B; font-weight:600; text-transform:uppercase;">Innovation Hubs</div>
-                <div style="font-size:1rem; font-weight:600; color:var(--cts-navy);">
+                <div style="font-size:0.8rem; color:var(--apple-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Innovation Hubs</div>
+                <div style="font-size:0.95rem; font-weight:600; color:var(--apple-text-primary);">
                   {{ \App\Models\Setting::get('contact_address', 'Pune & Nashik, Maharashtra, India') }}
                 </div>
               </div>
@@ -63,11 +62,11 @@
         </div>
 
         <div class="card card-dark" style="padding:32px;">
-          <h4 style="font-size:1.2rem; color:white; margin-bottom:10px;">Looking for Internship Opportunities?</h4>
-          <p style="color:#94A3B8; font-size:0.92rem; margin-bottom:18px;">
+          <h4 style="font-size:1.2rem; font-weight:700; color:white; margin-bottom:10px;">Looking for Internship Opportunities?</h4>
+          <p style="color:#a1a1a6; font-size:0.92rem; line-height:1.5; margin-bottom:18px;">
             Students and fresh graduates can apply directly to our hands-on engineering programs.
           </p>
-          <a href="{{ route('internships') }}" class="btn btn-outline-white btn-sm">
+          <a href="{{ route('internships') }}" class="btn btn-secondary btn-sm" style="background:#ffffff; color:#000000;">
             View Internship Tracks &rarr;
           </a>
         </div>
@@ -75,9 +74,9 @@
 
       <!-- Main Project & Inquiry Form -->
       <div>
-        <div class="card" style="padding:40px; box-shadow:var(--cts-shadow-lg);">
-          <h3 style="font-size:1.6rem; margin-bottom:8px; color:var(--cts-navy);">Send a Message</h3>
-          <p style="color:var(--cts-text-muted); font-size:0.92rem; margin-bottom:28px;">
+        <div class="card" style="padding:36px; box-shadow:var(--apple-shadow-card);">
+          <h3 style="font-size:1.6rem; font-weight:700; margin-bottom:8px; color:var(--apple-text-primary);">Send a Message</h3>
+          <p style="color:var(--apple-text-secondary); font-size:0.92rem; margin-bottom:24px;">
             Fill out the form below and an engineering consultant will follow up with you.
           </p>
 
@@ -131,7 +130,7 @@
               <textarea name="message" class="form-control" rows="4" placeholder="Describe your business problem, project scope, or questions..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+            <button type="submit" class="apple-btn apple-btn-primary" style="width:100%; padding:14px; font-size:15px; border-radius:14px;">
               Send Project Inquiry
             </button>
           </form>

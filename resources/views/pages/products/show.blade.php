@@ -3,10 +3,9 @@
 @section('title', $product->name . ' — Product Specifications | Creative Tech Squad')
 
 @section('content')
-<section class="hero-section" style="padding-bottom:40px;">
-  <div class="hero-glow"></div>
+<section class="hero-section text-center">
   <div class="container text-center hero-content container-narrow">
-    <a href="{{ route('products.index') }}" style="font-size:0.9rem; color:var(--cts-blue); font-weight:600; display:inline-flex; align-items:center; gap:6px; margin-bottom:16px;">
+    <a href="{{ route('products.index') }}" style="font-size:0.9rem; color:var(--apple-blue); font-weight:600; display:inline-flex; align-items:center; gap:6px; margin-bottom:16px;">
       &larr; Back to product catalog
     </a>
     <div style="margin-bottom:12px;">
@@ -31,22 +30,22 @@
   </div>
 </section>
 
-<section class="section" style="background:var(--cts-white); padding-top:60px;">
+<section class="section" style="background:#ffffff; border-top:1px solid var(--apple-border-light); border-bottom:1px solid var(--apple-border-light);">
   <div class="container container-narrow">
-    <div class="card" style="padding:48px; border-radius:var(--cts-radius-xl); box-shadow:var(--cts-shadow-md); margin-bottom:40px;">
-      <h2 style="font-size:1.8rem; margin-bottom:20px; color:var(--cts-navy);">Product Architecture & Capabilities</h2>
-      <div style="font-size:1.05rem; line-height:1.8; color:#334155; margin-bottom:36px;">
+    <div class="card" style="padding:48px 40px; border-radius:var(--apple-radius-xl); box-shadow:var(--apple-shadow-subtle);">
+      <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:20px; color:var(--apple-text-primary);">Product Architecture & Capabilities</h2>
+      <div style="font-size:1.05rem; line-height:1.8; color:var(--apple-text-secondary); margin-bottom:36px;">
         {{ $product->description }}
       </div>
 
       @if(!empty($product->features))
         <div style="margin-bottom:36px;">
-          <h3 style="font-size:1.3rem; margin-bottom:16px; color:var(--cts-navy);">Key Enterprise Features</h3>
+          <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:16px; color:var(--apple-text-primary);">Key Enterprise Features</h3>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
             @foreach($product->features as $f)
-              <div style="display:flex; align-items:flex-start; gap:10px; background:var(--cts-bg); padding:16px; border-radius:10px; border:1px solid var(--cts-border);">
-                <span style="color:#10B981; font-weight:bold; font-size:1.1rem;">✔</span>
-                <span style="font-size:0.95rem; color:#1E293B; font-weight:500;">{{ $f }}</span>
+              <div style="display:flex; align-items:flex-start; gap:10px; background:var(--apple-bg); padding:16px; border-radius:12px; border:1px solid var(--apple-border-light);">
+                <span style="color:#34c759; font-weight:bold; font-size:1.1rem;">✔</span>
+                <span style="font-size:0.95rem; color:var(--apple-text-primary); font-weight:500;">{{ $f }}</span>
               </div>
             @endforeach
           </div>
@@ -54,8 +53,8 @@
       @endif
 
       @if(!empty($product->technology_stack))
-        <div style="border-top:1px solid var(--cts-border); padding-top:24px;">
-          <h4 style="font-size:1.05rem; color:var(--cts-navy); margin-bottom:12px;">Underlying Technology Stack</h4>
+        <div style="border-top:1px solid var(--apple-border-light); padding-top:24px;">
+          <h4 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary); margin-bottom:12px;">Underlying Technology Stack</h4>
           <div style="display:flex; flex-wrap:wrap; gap:8px;">
             @foreach($product->technology_stack as $tech)
               <span class="tech-pill">{{ $tech }}</span>
@@ -68,16 +67,18 @@
 </section>
 
 @if($relatedProducts->count() > 0)
-<section class="section">
+<section class="section" style="padding-bottom:100px;">
   <div class="container">
-    <h3 style="font-size:1.5rem; margin-bottom:30px; text-align:center;">Related Products & Platforms</h3>
+    <h3 style="font-size:1.6rem; font-weight:700; margin-bottom:32px; text-align:center; color:var(--apple-text-primary);">Related Products & Platforms</h3>
     <div class="grid grid-3">
       @foreach($relatedProducts as $rel)
-        <div class="card">
-          <span class="badge badge-blue" style="margin-bottom:10px;">{{ $rel->category }}</span>
-          <h4 style="font-size:1.2rem; margin-bottom:8px;">{{ $rel->name }}</h4>
-          <p style="color:var(--cts-text-muted); font-size:0.9rem; margin-bottom:16px;">{{ Str::limit($rel->short_description, 110) }}</p>
-          <a href="{{ route('products.show', $rel->slug) }}" style="color:var(--cts-blue); font-weight:600; font-size:0.88rem;">Specifications &rarr;</a>
+        <div class="card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+          <div>
+            <span class="badge badge-blue" style="margin-bottom:10px;">{{ $rel->category }}</span>
+            <h4 style="font-size:1.2rem; font-weight:700; margin-bottom:8px; color:var(--apple-text-primary);">{{ $rel->name }}</h4>
+            <p style="color:var(--apple-text-secondary); font-size:0.9rem; line-height:1.5; margin-bottom:16px;">{{ Str::limit($rel->short_description, 110) }}</p>
+          </div>
+          <a href="{{ route('products.show', $rel->slug) }}" style="color:var(--apple-blue); font-weight:600; font-size:0.88rem; margin-top:auto; display:inline-block;">Specifications &rarr;</a>
         </div>
       @endforeach
     </div>

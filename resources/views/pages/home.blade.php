@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', 'Store')
+@section('title', 'Creative Tech Squad')
 
 @section('content')
 
-<!-- Section 01: Apple Store Hero Header -->
+<!-- Section 01: Hero Header -->
 <section class="apple-store-hero">
   <div class="container">
     <div class="apple-store-hero-grid">
       <div>
-        <h1 class="apple-hero-title">Store</h1>
+        <h1 class="apple-hero-title">Creative Tech Squad</h1>
       </div>
       <div class="apple-hero-right">
         <h2 class="apple-hero-right-title">The best way to build the software products you love.</h2>
         <div class="apple-hero-links">
-          <a href="javascript:void(0)" onclick="openModal('projectInquiryModal')" class="apple-hero-link">
+          <a href="javascript:void(0)" onclick="openSpecialistWidget()" class="apple-hero-link">
             Connect with a Lead Architect <span style="font-size:12px;">↗</span>
           </a>
           <a href="{{ route('solutions.index') }}" class="apple-hero-link">

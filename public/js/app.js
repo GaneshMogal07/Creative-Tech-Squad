@@ -175,4 +175,58 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 700);
     });
   }
+
+  // 7. Apple Specialist Help Widget & Popover
+  const specialistTrigger = document.getElementById('ctsSpecialistTrigger');
+  const specialistPopover = document.getElementById('ctsSpecialistPopover');
+  const specialistCloseBtn = document.getElementById('ctsSpecialistCloseBtn');
+
+  function openSpecialistWidget() {
+    if (specialistPopover) {
+      specialistPopover.classList.add('open');
+    }
+  }
+
+  function closeSpecialistWidget() {
+    if (specialistPopover) {
+      specialistPopover.classList.remove('open');
+    }
+  }
+
+  window.openSpecialistWidget = openSpecialistWidget;
+  window.closeSpecialistWidget = closeSpecialistWidget;
+
+  if (specialistTrigger) {
+    specialistTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (specialistPopover && specialistPopover.classList.contains('open')) {
+        closeSpecialistWidget();
+      } else {
+        openSpecialistWidget();
+      }
+    });
+  }
+
+  if (specialistCloseBtn) {
+    specialistCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeSpecialistWidget();
+    });
+  }
+
+  // Close when clicking outside of the popover
+  document.addEventListener('click', (e) => {
+    if (specialistPopover && specialistPopover.classList.contains('open')) {
+      if (!specialistPopover.contains(e.target) && (!specialistTrigger || !specialistTrigger.contains(e.target))) {
+        closeSpecialistWidget();
+      }
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && specialistPopover && specialistPopover.classList.contains('open')) {
+      closeSpecialistWidget();
+    }
+  });
 });

@@ -65,7 +65,7 @@
     </div>
 
     <ul class="mobile-nav-list">
-      <li><a href="{{ route('home') }}" class="mobile-nav-link {{ request()->routeIs('home') ? 'active' : '' }}"><span class="nav-icon">🏬</span> Store</a></li>
+      <li><a href="{{ route('home') }}" class="mobile-nav-link {{ request()->routeIs('home') ? 'active' : '' }}"><span class="nav-icon">🏠</span> Home</a></li>
       <li><a href="{{ route('solutions.index') }}" class="mobile-nav-link {{ request()->routeIs('solutions.*') ? 'active' : '' }}"><span class="nav-icon">⚡</span> Solutions</a></li>
       <li><a href="{{ route('products.index') }}" class="mobile-nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}"><span class="nav-icon">📦</span> Products</a></li>
       <li><a href="{{ route('ai') }}" class="mobile-nav-link {{ request()->routeIs('ai') ? 'active' : '' }}"><span class="nav-icon">🤖</span> AI Engine</a></li>
@@ -103,7 +103,7 @@
 
       <nav>
         <ul class="apple-nav-list">
-          <li><a href="{{ route('home') }}" class="apple-nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Store</a></li>
+          <li><a href="{{ route('home') }}" class="apple-nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
           <li><a href="{{ route('solutions.index') }}" class="apple-nav-link {{ request()->routeIs('solutions.*') ? 'active' : '' }}">Solutions</a></li>
           <li><a href="{{ route('products.index') }}" class="apple-nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}">Products</a></li>
           <li><a href="{{ route('ai') }}" class="apple-nav-link {{ request()->routeIs('ai') ? 'active' : '' }}">AI</a></li>
@@ -118,8 +118,8 @@
       </nav>
 
       <div class="apple-nav-actions">
-        <button onclick="openModal('projectInquiryModal')" class="apple-icon-btn" title="Start a Project">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <button onclick="openModal('projectInquiryModal')" class="apple-btn apple-btn-primary" style="padding: 5px 14px; font-size: 12px; border-radius: 980px; font-weight: 500;" title="Start a Project">
+          Start a Project
         </button>
       </div>
     </div>
@@ -147,7 +147,7 @@
 
       <div class="apple-footer-directory">
         <div class="apple-footer-col">
-          <h5>Shop and Learn</h5>
+          <h5>Solutions & Products</h5>
           <ul>
             <li><a href="{{ route('solutions.show', 'erp-solutions') }}">Enterprise ERP Suite</a></li>
             <li><a href="{{ route('solutions.show', 'custom-software') }}">Custom SaaS Products</a></li>
@@ -211,7 +211,7 @@
         <div class="apple-footer-legal-links">
           <a href="{{ route('privacy') }}">Privacy Policy</a>
           <a href="{{ route('terms') }}">Terms of Use</a>
-          <a href="{{ route('contact') }}">Sales Policy</a>
+          <a href="{{ route('contact') }}">Service Agreements</a>
           <a href="{{ route('terms') }}">Legal</a>
           <a href="{{ route('home') }}">Site Map</a>
         </div>
@@ -284,6 +284,66 @@
 
         <button type="submit" class="apple-btn apple-btn-primary" style="width:100%; padding:14px; font-size:15px; border-radius:14px;">Submit Details</button>
       </form>
+    </div>
+  </div>
+
+  <!-- Floating Specialist Help Button (Bottom Right) -->
+  <div class="cts-specialist-widget" id="ctsSpecialistWidget">
+    <button class="cts-specialist-trigger" id="ctsSpecialistTrigger" aria-label="Need Help? Chat with a Specialist" type="button">
+      <div class="cts-specialist-avatar-wrapper">
+        <img src="{{ asset('images/specialist-avatar.jpg') }}" alt="Specialist" class="cts-specialist-avatar-img">
+        <span class="cts-online-dot"></span>
+      </div>
+      <span class="cts-specialist-trigger-label">Ask an Architect</span>
+    </button>
+  </div>
+
+  <!-- Specialist Help Popover Window (Apple Style) -->
+  <div class="cts-specialist-popover" id="ctsSpecialistPopover" role="dialog" aria-modal="true" aria-labelledby="specialistHeading">
+    <div class="cts-specialist-popover-header">
+      <button class="cts-specialist-close-btn" id="ctsSpecialistCloseBtn" aria-label="Close Help Window" type="button">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="cts-specialist-banner-box">
+      <img src="{{ asset('images/specialists-banner.jpg') }}" alt="Creative Tech Squad Specialists" class="cts-specialist-banner-img">
+    </div>
+
+    <div class="cts-specialist-body">
+      <h3 class="cts-specialist-title" id="specialistHeading">We're here to help.</h3>
+
+      <!-- Card 1: Existing Product / ERP Support -->
+      <div class="cts-specialist-item">
+        <h4 class="cts-specialist-item-title">Support for a product I have.</h4>
+        <p class="cts-specialist-item-desc">Do you need technical assistance with a CTS ERP platform, software module, or ongoing SLA support?</p>
+        <a href="{{ route('contact') }}" class="apple-blue-pill-btn">
+          Visit CTS Support
+        </a>
+      </div>
+
+      <!-- Card 2: Help with a project or custom build -->
+      <div class="cts-specialist-item">
+        <h4 class="cts-specialist-item-title">Help with a project or build.</h4>
+        <p class="cts-specialist-item-desc">Need to check the status of your software build or discuss new custom modules?</p>
+        <button onclick="closeSpecialistWidget(); openModal('projectInquiryModal');" class="apple-blue-pill-btn">
+          Project Inquiry
+        </button>
+      </div>
+
+      <!-- Card 3: Help scoping / purchasing software -->
+      <div class="cts-specialist-item">
+        <h4 class="cts-specialist-item-title">Help purchasing software.</h4>
+        <p class="cts-specialist-item-desc">Would you like more information about an ERP solution, or schedule a live architecture demo?</p>
+        <a href="https://wa.me/919511951568?text=Hi%20Creative%20Tech%20Squad%2C%20I%20would%20like%20to%20connect%20with%20a%20Specialist" target="_blank" class="apple-blue-pill-btn">
+          Connect With A Specialist
+        </a>
+      </div>
+    </div>
+
+    <div class="cts-specialist-footer">
+      <span>India &bull; English</span>
+      <a href="tel:+919511951568">📞 +91 95119 51568</a>
     </div>
   </div>
 
