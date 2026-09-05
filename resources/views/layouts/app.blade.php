@@ -92,14 +92,9 @@
   <!-- Apple Global Header Navigation -->
   <header class="apple-header">
     <div class="apple-nav-container">
-      <div style="display:flex; align-items:center; gap:12px;">
-        <button class="apple-mobile-toggle" aria-label="Toggle Menu" id="mobileMenuBtn" type="button">
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-        <a href="{{ route('home') }}" class="apple-nav-logo">
-          <img src="{{ asset('images/logo.png') }}" alt="Creative Tech Squad" style="height:28px; max-width:140px; object-fit:contain;">
-        </a>
-      </div>
+      <a href="{{ route('home') }}" class="apple-nav-logo">
+        <img src="{{ asset('images/logo.png') }}" alt="Creative Tech Squad" style="height:28px; max-width:140px; object-fit:contain;">
+      </a>
 
       <nav>
         <ul class="apple-nav-list">
@@ -118,8 +113,14 @@
       </nav>
 
       <div class="apple-nav-actions">
-        <button onclick="openModal('projectInquiryModal')" class="apple-btn apple-btn-primary" style="padding: 5px 14px; font-size: 12px; border-radius: 980px; font-weight: 500;" title="Start a Project">
+        <button onclick="openModal('projectInquiryModal')" class="apple-btn apple-btn-primary apple-nav-cta-btn" title="Start a Project">
           Start a Project
+        </button>
+        <button class="apple-mobile-toggle" aria-label="Toggle Menu" id="mobileMenuBtn" type="button">
+          <svg class="apple-menu-icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <line x1="2" y1="5.5" x2="16" y2="5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="2" y1="12.5" x2="16" y2="12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -130,7 +131,7 @@
     @yield('content')
   </main>
 
-  <!-- Apple Multi-Column Directory Footer -->
+  <!-- Apple Multi-Column Directory Footer (Accordion on Mobile) -->
   <footer class="apple-footer">
     <div class="container">
       <div class="apple-footer-disclaimer">
@@ -146,12 +147,16 @@
       </div>
 
       <div class="apple-footer-directory">
+        <!-- Col 1: Solutions & Products -->
         <div class="apple-footer-col">
-          <h5>Solutions & Products</h5>
-          <ul>
+          <button class="apple-footer-accordion-btn" type="button" aria-expanded="false">
+            <span>Solutions &amp; Products</span>
+            <svg class="apple-footer-chevron" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 5 7 9 11 5"></polyline></svg>
+          </button>
+          <ul class="apple-footer-col-list">
             <li><a href="{{ route('solutions.show', 'erp-solutions') }}">Enterprise ERP Suite</a></li>
             <li><a href="{{ route('solutions.show', 'custom-software') }}">Custom SaaS Products</a></li>
-            <li><a href="{{ route('ai') }}">Neural AI & RAG</a></li>
+            <li><a href="{{ route('ai') }}">Neural AI &amp; RAG</a></li>
             <li><a href="{{ route('education') }}">Education Lab</a></li>
             <li><a href="{{ route('internships') }}">Internship Tracks</a></li>
             <li><a href="{{ route('products.index') }}">Product Catalog</a></li>
@@ -159,9 +164,13 @@
           </ul>
         </div>
 
+        <!-- Col 2: Client Portals -->
         <div class="apple-footer-col">
-          <h5>Client Portals</h5>
-          <ul>
+          <button class="apple-footer-accordion-btn" type="button" aria-expanded="false">
+            <span>Client Portals</span>
+            <svg class="apple-footer-chevron" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 5 7 9 11 5"></polyline></svg>
+          </button>
+          <ul class="apple-footer-col-list">
             <li><a href="{{ route('admin.login') }}">Staff Admin Portal</a></li>
             <li><a href="javascript:void(0)" onclick="openModal('projectInquiryModal')">Start a Project</a></li>
             <li><a href="{{ route('contact') }}">Submit Inquiry</a></li>
@@ -170,9 +179,13 @@
           </ul>
         </div>
 
+        <!-- Col 3: Creative Tech Squad -->
         <div class="apple-footer-col">
-          <h5>Creative Tech Squad</h5>
-          <ul>
+          <button class="apple-footer-accordion-btn" type="button" aria-expanded="false">
+            <span>Creative Tech Squad</span>
+            <svg class="apple-footer-chevron" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 5 7 9 11 5"></polyline></svg>
+          </button>
+          <ul class="apple-footer-col-list">
             <li><a href="{{ route('about') }}">About Company</a></li>
             <li><a href="{{ route('careers') }}">Career Opportunities</a></li>
             <li><a href="{{ route('blog.index') }}">Engineering Blog</a></li>
@@ -181,9 +194,13 @@
           </ul>
         </div>
 
+        <!-- Col 4: For Business -->
         <div class="apple-footer-col">
-          <h5>For Business</h5>
-          <ul>
+          <button class="apple-footer-accordion-btn" type="button" aria-expanded="false">
+            <span>For Business</span>
+            <svg class="apple-footer-chevron" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 5 7 9 11 5"></polyline></svg>
+          </button>
+          <ul class="apple-footer-col-list">
             <li><a href="{{ route('solutions.show', 'erp-solutions') }}">Multi-Branch Attendance</a></li>
             <li><a href="{{ route('solutions.show', 'erp-solutions') }}">Biometric HRMS Sync</a></li>
             <li><a href="{{ route('solutions.show', 'custom-software') }}">Manufacturing ERP</a></li>
@@ -192,11 +209,15 @@
           </ul>
         </div>
 
+        <!-- Col 5: CTS Values -->
         <div class="apple-footer-col">
-          <h5>CTS Values</h5>
-          <ul>
+          <button class="apple-footer-accordion-btn" type="button" aria-expanded="false">
+            <span>CTS Values</span>
+            <svg class="apple-footer-chevron" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 5 7 9 11 5"></polyline></svg>
+          </button>
+          <ul class="apple-footer-col-list">
             <li><a href="{{ route('about') }}">Engineering Excellence</a></li>
-            <li><a href="{{ route('privacy') }}">Privacy & Security</a></li>
+            <li><a href="{{ route('privacy') }}">Privacy &amp; Security</a></li>
             <li><a href="{{ route('terms') }}">Transparent Agreements</a></li>
             <li><a href="{{ route('education') }}">Student Mentorship</a></li>
             <li><a href="{{ route('home') }}">Customer First</a></li>
@@ -204,19 +225,27 @@
         </div>
       </div>
 
+      <div class="apple-footer-help">
+        <p>More ways to connect: <a href="javascript:void(0)" onclick="openSpecialistWidget()">Connect with an Architect</a> or call <a href="tel:+919511951568">+91 95119 51568</a>.</p>
+      </div>
+
       <div class="apple-footer-legal">
-        <div>
+        <div class="apple-footer-country">
+          <strong>India</strong>
+        </div>
+        <div class="apple-footer-copy">
           Copyright &copy; {{ date('Y') }} Creative Tech Squad Inc. All rights reserved.
         </div>
         <div class="apple-footer-legal-links">
           <a href="{{ route('privacy') }}">Privacy Policy</a>
+          <span class="sep">|</span>
           <a href="{{ route('terms') }}">Terms of Use</a>
+          <span class="sep">|</span>
           <a href="{{ route('contact') }}">Service Agreements</a>
+          <span class="sep">|</span>
           <a href="{{ route('terms') }}">Legal</a>
+          <span class="sep">|</span>
           <a href="{{ route('home') }}">Site Map</a>
-        </div>
-        <div>
-          <strong>India</strong>
         </div>
       </div>
     </div>

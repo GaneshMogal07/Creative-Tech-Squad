@@ -229,4 +229,20 @@ document.addEventListener('DOMContentLoaded', () => {
       closeSpecialistWidget();
     }
   });
+
+  // 8. Apple Mobile Footer Accordion Toggle
+  const footerAccordionBtns = document.querySelectorAll('.apple-footer-accordion-btn');
+  footerAccordionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        const parentCol = btn.closest('.apple-footer-col');
+        if (parentCol) {
+          const isOpen = parentCol.classList.contains('open');
+          parentCol.classList.toggle('open');
+          btn.setAttribute('aria-expanded', (!isOpen).toString());
+        }
+      }
+    });
+  });
 });
+
