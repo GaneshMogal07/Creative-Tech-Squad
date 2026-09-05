@@ -41,8 +41,18 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
-# Expose port
-ENV PORT=80
+# Default Environment variables for Laravel
+ENV APP_NAME="Creative Tech Squad" \
+    APP_ENV=production \
+    APP_DEBUG=false \
+    APP_KEY="base64:YTx4gaY5nqyklCORDycXfAbCB93ka7ok/5PfsZUlFjM=" \
+    APP_URL="https://creativetechsquad.in" \
+    DB_CONNECTION=sqlite \
+    SESSION_DRIVER=file \
+    CACHE_STORE=file \
+    QUEUE_CONNECTION=sync \
+    PORT=80
+
 EXPOSE 80
 
 # Make entrypoint script executable
