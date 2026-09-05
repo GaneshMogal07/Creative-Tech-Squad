@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Mobile Drawer Navigation (Slide-in from Left)
   const mobileToggle = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
+  const mobileDrawer = document.getElementById('mobileDrawer');
   const navBackdrop = document.getElementById('navBackdrop');
   const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
   function openMobileDrawer() {
-    if (navMenu) navMenu.classList.add('open');
+    if (mobileDrawer) mobileDrawer.classList.add('open');
     if (navBackdrop) navBackdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMobileDrawer() {
-    if (navMenu) navMenu.classList.remove('open');
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
     if (navBackdrop) navBackdrop.classList.remove('open');
     document.body.style.overflow = '';
   }
@@ -41,18 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   if (drawerCloseBtn) {
-    drawerCloseBtn.addEventListener('click', closeMobileDrawer);
+    drawerCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMobileDrawer();
+    });
   }
   if (navBackdrop) {
     navBackdrop.addEventListener('click', closeMobileDrawer);
   }
 
-  // Close drawer when any nav-link is clicked on mobile
-  document.querySelectorAll('.nav-link').forEach(link => {
+  // Close drawer when any mobile-nav-link is clicked
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 1180) {
-        closeMobileDrawer();
-      }
+      closeMobileDrawer();
     });
   });
 
