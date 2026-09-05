@@ -22,7 +22,7 @@
       Creative Tech Squad builds ERP solutions, custom software products, AI-powered applications, and practical technology programs.
     </p>
 
-    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+    <div class="hero-btn-group">
       <button onclick="openModal('projectInquiryModal')" class="btn btn-primary btn-lg" id="heroStartProjectBtn">
         Start a Project
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>

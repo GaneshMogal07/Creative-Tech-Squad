@@ -14,23 +14,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Mobile Menu Toggle
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      const isOpen = navMenu.classList.contains('open');
-      mobileToggle.setAttribute('aria-expanded', isOpen);
-    });
+  // 2. Mobile Drawer Navigation (Slide-in from Left)
+  const mobileToggle = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+  const navBackdrop = document.getElementById('navBackdrop');
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('open')) {
-        navMenu.classList.remove('open');
-      }
+  function openMobileDrawer() {
+    if (navMenu) navMenu.classList.add('open');
+    if (navBackdrop) navBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileDrawer() {
+    if (navMenu) navMenu.classList.remove('open');
+    if (navBackdrop) navBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.openMobileDrawer = openMobileDrawer;
+  window.closeMobileDrawer = closeMobileDrawer;
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openMobileDrawer();
     });
   }
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', closeMobileDrawer);
+  }
+  if (navBackdrop) {
+    navBackdrop.addEventListener('click', closeMobileDrawer);
+  }
+
+  // Close drawer when any nav-link is clicked on mobile
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 1180) {
+        closeMobileDrawer();
+      }
+    });
+  });
 
   // 3. Dynamic Filter Tabs (Products, Portfolio, Blog)
   const filterTabs = document.querySelectorAll('.filter-tab');

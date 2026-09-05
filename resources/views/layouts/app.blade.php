@@ -44,39 +44,60 @@
     @endif
   </div>
 
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
   <!-- Header Navigation -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="{{ route('home') }}" class="brand-logo">
-        <img src="{{ asset('images/logo.png') }}" alt="Creative Tech Squad" style="height:44px; max-width:220px; width:auto; display:block; object-fit:contain;">
-      </a>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="mobile-toggle" aria-label="Toggle Menu" id="mobileMenuBtn">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <a href="{{ route('home') }}" class="brand-logo">
+          <img src="{{ asset('images/logo.png') }}" alt="Creative Tech Squad" style="height:42px; max-width:210px; width:auto; display:block; object-fit:contain;">
+        </a>
+      </div>
 
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
-          <li><a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
-          <li><a href="{{ route('solutions.index') }}" class="nav-link {{ request()->routeIs('solutions.*') ? 'active' : '' }}">Solutions</a></li>
-          <li><a href="{{ route('products.index') }}" class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}">Products</a></li>
-          <li><a href="{{ route('ai') }}" class="nav-link {{ request()->routeIs('ai') ? 'active' : '' }}">AI</a></li>
-          <li><a href="{{ route('education') }}" class="nav-link {{ request()->routeIs('education*') ? 'active' : '' }}">Education</a></li>
-          <li><a href="{{ route('internships') }}" class="nav-link {{ request()->routeIs('internships*') ? 'active' : '' }}">Internships</a></li>
-          <li><a href="{{ route('portfolio') }}" class="nav-link {{ request()->routeIs('portfolio*') ? 'active' : '' }}">Portfolio</a></li>
-          <li><a href="{{ route('careers') }}" class="nav-link {{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
-          <li><a href="{{ route('blog.index') }}" class="nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}">Blog</a></li>
-          <li><a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
-          
-          <li class="mobile-only" style="margin-top:16px;">
-            <button onclick="openModal('projectInquiryModal')" class="btn btn-primary" style="width:100%;">Start a Project</button>
-          </li>
+      <nav class="nav-menu" id="navMenu">
+        <!-- Mobile Drawer Header -->
+        <div class="mobile-drawer-header">
+          <div class="brand-logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Creative Tech Squad" style="height:36px; max-width:170px; width:auto; display:block; object-fit:contain;">
+          </div>
+          <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <ul class="nav-list">
+          <li><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"><span class="nav-icon">🏠</span> Home</a></li>
+          <li><a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"><span class="nav-icon">👥</span> About</a></li>
+          <li><a href="{{ route('solutions.index') }}" class="nav-link {{ request()->routeIs('solutions.*') ? 'active' : '' }}"><span class="nav-icon">⚡</span> Solutions</a></li>
+          <li><a href="{{ route('products.index') }}" class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}"><span class="nav-icon">📦</span> Products</a></li>
+          <li><a href="{{ route('ai') }}" class="nav-link {{ request()->routeIs('ai') ? 'active' : '' }}"><span class="nav-icon">🤖</span> AI Engine</a></li>
+          <li><a href="{{ route('education') }}" class="nav-link {{ request()->routeIs('education*') ? 'active' : '' }}"><span class="nav-icon">🎓</span> Education</a></li>
+          <li><a href="{{ route('internships') }}" class="nav-link {{ request()->routeIs('internships*') ? 'active' : '' }}"><span class="nav-icon">💼</span> Internships</a></li>
+          <li><a href="{{ route('portfolio') }}" class="nav-link {{ request()->routeIs('portfolio*') ? 'active' : '' }}"><span class="nav-icon">✨</span> Portfolio</a></li>
+          <li><a href="{{ route('careers') }}" class="nav-link {{ request()->routeIs('careers*') ? 'active' : '' }}"><span class="nav-icon">🚀</span> Careers</a></li>
+          <li><a href="{{ route('blog.index') }}" class="nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}"><span class="nav-icon">📝</span> Blog</a></li>
+          <li><a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"><span class="nav-icon">📬</span> Contact</a></li>
         </ul>
+
+        <div class="mobile-drawer-footer">
+          <button onclick="closeMobileDrawer(); openModal('projectInquiryModal');" class="btn btn-primary" style="width:100%; padding:14px; font-weight:700; border-radius:12px; margin-bottom:14px;">
+            Start a Project &rarr;
+          </button>
+          <div class="drawer-contact-info">
+            <a href="tel:+919511951568">📞 +91 95119 51568</a>
+            <a href="mailto:creativetechsquad.official@gmail.com">📧 creativetechsquad.official@gmail.com</a>
+          </div>
+        </div>
       </nav>
 
       <div class="nav-actions">
         <button onclick="openModal('projectInquiryModal')" class="btn btn-primary btn-sm" id="headerCtaBtn">
           Start a Project
-        </button>
-        <button class="mobile-toggle" aria-label="Toggle Menu" id="mobileMenuBtn">
-          <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
