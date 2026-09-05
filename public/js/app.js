@@ -57,6 +57,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 3. Apple Slider Navigation Buttons (Category & Latest Cards)
+  const categorySlider = document.getElementById('categorySlider');
+  const catPrev = document.getElementById('catSliderPrev');
+  const catNext = document.getElementById('catSliderNext');
+
+  if (categorySlider && catPrev && catNext) {
+    catPrev.addEventListener('click', () => {
+      categorySlider.scrollBy({ left: -260, behavior: 'smooth' });
+    });
+    catNext.addEventListener('click', () => {
+      categorySlider.scrollBy({ left: 260, behavior: 'smooth' });
+    });
+  }
+
+  const latestCardSlider = document.getElementById('latestCardSlider');
+  const latestPrev = document.getElementById('latestSliderPrev');
+  const latestNext = document.getElementById('latestSliderNext');
+
+  if (latestCardSlider && latestPrev && latestNext) {
+    latestPrev.addEventListener('click', () => {
+      latestCardSlider.scrollBy({ left: -390, behavior: 'smooth' });
+    });
+    latestNext.addEventListener('click', () => {
+      latestCardSlider.scrollBy({ left: 390, behavior: 'smooth' });
+    });
+  }
+
   // 3. Dynamic Filter Tabs (Products, Portfolio, Blog)
   const filterTabs = document.querySelectorAll('.filter-tab');
   const filterItems = document.querySelectorAll('.filterable-item');
