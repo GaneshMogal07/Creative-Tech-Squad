@@ -65,17 +65,17 @@
     </div>
 
     <ul class="mobile-nav-list">
-      <li><a href="{{ route('home') }}" class="mobile-nav-link {{ request()->routeIs('home') ? 'active' : '' }}"><span class="nav-icon">🏠</span> Home</a></li>
-      <li><a href="{{ route('solutions.index') }}" class="mobile-nav-link {{ request()->routeIs('solutions.*') ? 'active' : '' }}"><span class="nav-icon">⚡</span> Solutions</a></li>
-      <li><a href="{{ route('products.index') }}" class="mobile-nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}"><span class="nav-icon">📦</span> Products</a></li>
-      <li><a href="{{ route('ai') }}" class="mobile-nav-link {{ request()->routeIs('ai') ? 'active' : '' }}"><span class="nav-icon">🤖</span> AI Engine</a></li>
-      <li><a href="{{ route('education') }}" class="mobile-nav-link {{ request()->routeIs('education*') ? 'active' : '' }}"><span class="nav-icon">🎓</span> Education</a></li>
-      <li><a href="{{ route('internships') }}" class="mobile-nav-link {{ request()->routeIs('internships*') ? 'active' : '' }}"><span class="nav-icon">💼</span> Internships</a></li>
-      <li><a href="{{ route('portfolio') }}" class="mobile-nav-link {{ request()->routeIs('portfolio*') ? 'active' : '' }}"><span class="nav-icon">✨</span> Portfolio</a></li>
-      <li><a href="{{ route('careers') }}" class="mobile-nav-link {{ request()->routeIs('careers*') ? 'active' : '' }}"><span class="nav-icon">🚀</span> Careers</a></li>
-      <li><a href="{{ route('blog.index') }}" class="mobile-nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}"><span class="nav-icon">📝</span> Blog</a></li>
-      <li><a href="{{ route('about') }}" class="mobile-nav-link {{ request()->routeIs('about') ? 'active' : '' }}"><span class="nav-icon">👥</span> About</a></li>
-      <li><a href="{{ route('contact') }}" class="mobile-nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"><span class="nav-icon">📬</span> Contact</a></li>
+      <li><a href="{{ route('home') }}" class="mobile-nav-link {{ request()->routeIs('home') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span> Home</a></li>
+      <li><a href="{{ route('solutions.index') }}" class="mobile-nav-link {{ request()->routeIs('solutions.*') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span> Solutions</a></li>
+      <li><a href="{{ route('products.index') }}" class="mobile-nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></span> Products</a></li>
+      <li><a href="{{ route('ai') }}" class="mobile-nav-link {{ request()->routeIs('ai') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span> AI Engine</a></li>
+      <li><a href="{{ route('education') }}" class="mobile-nav-link {{ request()->routeIs('education*') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5"/></svg></span> Education</a></li>
+      <li><a href="{{ route('internships') }}" class="mobile-nav-link {{ request()->routeIs('internships*') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span> Internships</a></li>
+      <li><a href="{{ route('portfolio') }}" class="mobile-nav-link {{ request()->routeIs('portfolio*') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></span> Portfolio</a></li>
+      <li><a href="{{ route('careers') }}" class="mobile-nav-link {{ request()->routeIs('careers*') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></span> Careers</a></li>
+      <li><a href="{{ route('blog.index') }}" class="mobile-nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg></span> Blog</a></li>
+      <li><a href="{{ route('about') }}" class="mobile-nav-link {{ request()->routeIs('about') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span> About</a></li>
+      <li><a href="{{ route('contact') }}" class="mobile-nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"><span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span> Contact</a></li>
     </ul>
 
     <div class="mobile-drawer-footer">
@@ -83,8 +83,14 @@
         Start a Project &rarr;
       </button>
       <div class="drawer-contact-info">
-        <a href="tel:+919511951568">📞 +91 95119 51568</a>
-        <a href="mailto:creativetechsquad.official@gmail.com">📧 creativetechsquad.official@gmail.com</a>
+        <a href="tel:+919511951568" style="display:flex; align-items:center; gap:6px;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          +91 95119 51568
+        </a>
+        <a href="mailto:{{ \App\Models\Setting::get('contact_email', 'contact@creativetechsquad.in') }}" style="display:flex; align-items:center; gap:6px;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          {{ \App\Models\Setting::get('contact_email', 'contact@creativetechsquad.in') }}
+        </a>
       </div>
     </div>
   </aside>
@@ -268,7 +274,7 @@
           <input type="text" name="name" class="form-control" placeholder="e.g. John Doe" required>
         </div>
 
-        <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div class="form-row-2 form-group">
           <div>
             <label class="form-label">Work Email *</label>
             <input type="email" name="email" class="form-control" placeholder="john@company.com" required>
@@ -279,14 +285,14 @@
           </div>
         </div>
 
-        <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div class="form-row-2 form-group">
           <div>
             <label class="form-label">Company / Institution</label>
             <input type="text" name="company" class="form-control" placeholder="Company Name">
           </div>
           <div>
             <label class="form-label">Solution Area *</label>
-            <select name="inquiry_type" class="form-control" required>
+            <select name="inquiry_type" class="form-control form-select" required>
               <option value="ERP Solutions">Enterprise ERP Suite</option>
               <option value="Custom Software">Custom SaaS Product</option>
               <option value="AI Solutions">Neural AI & Automation</option>

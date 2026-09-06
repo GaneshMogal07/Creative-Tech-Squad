@@ -61,12 +61,12 @@
             @endif
           </div>
 
-          <div style="display:flex; gap:10px; margin-top:auto;">
-            <a href="{{ route('products.show', $prod->slug) }}" class="btn btn-primary btn-sm" style="flex:1;">
+          <div style="display:flex; gap:10px; margin-top:auto; flex-wrap:wrap;">
+            <a href="{{ route('products.show', $prod->slug) }}" class="btn btn-primary btn-sm" style="flex:1; min-width:120px; text-align:center;">
               Product Specs
             </a>
             @if($prod->demo_url)
-              <button onclick="openModal('projectInquiryModal')" class="btn btn-secondary btn-sm">
+              <button onclick="openModal('projectInquiryModal')" class="btn btn-secondary btn-sm" style="flex:1; min-width:80px;">
                 Demo
               </button>
             @endif

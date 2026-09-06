@@ -25,7 +25,7 @@
 
 <section class="section" style="background:#ffffff; border-top:1px solid var(--apple-border-light); border-bottom:1px solid var(--apple-border-light); padding-bottom:100px;">
   <div class="container container-narrow">
-    <div class="card" style="padding:48px 40px; border-radius:var(--apple-radius-xl); box-shadow:var(--apple-shadow-subtle);">
+    <div class="card detail-card">
       <h2 style="font-size:1.6rem; font-weight:700; color:var(--apple-text-primary); margin-bottom:16px;">Role Overview</h2>
       <p style="font-size:1.05rem; line-height:1.75; color:var(--apple-text-secondary); margin-bottom:32px;">
         {{ $career->description }}
@@ -50,7 +50,7 @@
             <input type="text" name="name" class="form-control" required>
           </div>
 
-          <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="form-row-2 form-group">
             <div>
               <label class="form-label">Email Address *</label>
               <input type="email" name="email" class="form-control" required>

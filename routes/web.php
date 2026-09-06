@@ -32,6 +32,9 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+Route::get('/health', fn () => response()->json(['status' => 'ok'], 200))->name('health');
+Route::get('/ping', fn () => response('pong', 200))->name('ping');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/about', [PageController::class, 'about'])->name('about');

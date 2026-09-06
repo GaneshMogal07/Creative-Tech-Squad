@@ -19,14 +19,14 @@
 
     <div class="grid" style="gap:20px;">
       @forelse($careers as $job)
-        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding:28px 36px;">
+        <div class="card job-item-card">
           <div>
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap;">
               <span class="badge badge-purple">{{ $job->department }}</span>
               <span class="badge" style="background:#f0f0f2; color:var(--apple-text-primary);">{{ $job->employment_type }}</span>
             </div>
             <h3 style="font-size:1.35rem; font-weight:700; margin-bottom:6px; color:var(--apple-text-primary);">{{ $job->title }}</h3>
-            <div style="font-size:0.9rem; color:var(--apple-text-secondary); display:flex; gap:16px; flex-wrap:wrap;">
+            <div style="font-size:0.9rem; color:var(--apple-text-secondary); display:flex; gap:14px; flex-wrap:wrap;">
               <span>📍 {{ $job->location }}</span>
               <span>💼 {{ $job->experience }}</span>
               @if($job->salary_range)

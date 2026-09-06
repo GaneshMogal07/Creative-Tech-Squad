@@ -32,7 +32,7 @@
 
 <section class="section" style="background:#ffffff; border-top:1px solid var(--apple-border-light); border-bottom:1px solid var(--apple-border-light);">
   <div class="container container-narrow">
-    <div class="card" style="padding:48px 40px; border-radius:var(--apple-radius-xl); box-shadow:var(--apple-shadow-subtle);">
+    <div class="card detail-card">
       <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:20px; color:var(--apple-text-primary);">Product Architecture & Capabilities</h2>
       <div style="font-size:1.05rem; line-height:1.8; color:var(--apple-text-secondary); margin-bottom:36px;">
         {{ $product->description }}
@@ -41,10 +41,12 @@
       @if(!empty($product->features))
         <div style="margin-bottom:36px;">
           <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:16px; color:var(--apple-text-primary);">Key Enterprise Features</h3>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="form-row-2" style="margin-bottom:16px;">
             @foreach($product->features as $f)
-              <div style="display:flex; align-items:flex-start; gap:10px; background:var(--apple-bg); padding:16px; border-radius:12px; border:1px solid var(--apple-border-light);">
-                <span style="color:#34c759; font-weight:bold; font-size:1.1rem;">✔</span>
+              <div style="display:flex; align-items:flex-start; gap:12px; background:var(--apple-bg); padding:16px; border-radius:12px; border:1px solid var(--apple-border-light);">
+                <div style="width:20px; height:20px; border-radius:50%; background:#e6f9ed; color:#34c759; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+                  <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
                 <span style="font-size:0.95rem; color:var(--apple-text-primary); font-weight:500;">{{ $f }}</span>
               </div>
             @endforeach

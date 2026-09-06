@@ -20,11 +20,11 @@
   </div>
 </section>
 
-<section class="section" style="background:var(--cts-white); padding-top:40px;">
+<section class="section" style="background:#ffffff; padding-top:40px;">
   <div class="container container-narrow">
-    <article class="card" style="padding:48px; border-radius:var(--cts-radius-xl); box-shadow:var(--cts-shadow-md); margin-bottom:48px;">
+    <article class="card detail-card" style="margin-bottom:48px;">
       
-      <div style="font-size:1.1rem; line-height:1.85; color:#1E293B;" class="blog-body-content">
+      <div style="font-size:1.05rem; line-height:1.8; color:var(--apple-text-primary);" class="blog-body-content">
         {!! $post->content !!}
       </div>
 

@@ -30,7 +30,7 @@
 
 <section class="section" style="background:#ffffff; border-top:1px solid var(--apple-border-light); border-bottom:1px solid var(--apple-border-light); padding-bottom:100px;">
   <div class="container container-narrow">
-    <div class="card" style="padding:48px 40px; border-radius:var(--apple-radius-xl); box-shadow:var(--apple-shadow-subtle); margin-bottom:40px;">
+    <div class="card detail-card" style="margin-bottom:40px;">
       <h2 style="font-size:1.7rem; font-weight:700; margin-bottom:20px; color:var(--apple-text-primary);">Curriculum Structure & Outcomes</h2>
       <p style="font-size:1.05rem; line-height:1.7; color:var(--apple-text-secondary); margin-bottom:32px;">
         Unlike surface-level tutorials, this program requires building full software layers: database modeling, API development, asynchronous background workers, authentication guards, and live production deployments.
@@ -84,7 +84,7 @@
         <input type="text" name="name" class="form-control" required>
       </div>
 
-      <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div class="form-row-2 form-group">
         <div>
           <label class="form-label">Email *</label>
           <input type="email" name="email" class="form-control" required>

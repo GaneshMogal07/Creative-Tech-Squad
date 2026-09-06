@@ -20,9 +20,9 @@
   </div>
 </section>
 
-<section class="section" style="background:var(--cts-white); padding-top:60px;">
+<section class="section" style="background:#ffffff; padding-top:40px;">
   <div class="container container-narrow">
-    <div class="card" style="padding:48px; border-radius:var(--cts-radius-xl); box-shadow:var(--cts-shadow-md); margin-bottom:40px;">
+    <div class="card detail-card" style="margin-bottom:40px;">
       
       @if($project->challenge)
         <div style="margin-bottom:36px;">

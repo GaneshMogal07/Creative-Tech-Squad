@@ -496,14 +496,65 @@ img {
 }
 
 .apple-category-thumb {
-  width: 80px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
-  font-size: 38px;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+  margin-bottom: 10px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid var(--apple-border-light);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  color: var(--apple-text-primary);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-category-item:hover .apple-category-thumb {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 113, 227, 0.15);
+  border-color: rgba(0, 113, 227, 0.3);
+  color: var(--apple-blue);
+}
+
+/* Client Trust & Social Proof Strip */
+.client-trust-section {
+  padding: 24px 0 32px;
+  border-bottom: 1px solid var(--apple-border-light);
+  background: var(--apple-bg);
+}
+
+.client-trust-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--apple-text-muted);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.client-trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.client-logo-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--apple-text-primary);
+  letter-spacing: -0.01em;
+  padding: 6px 16px;
+  border-radius: 980px;
+  background: #ffffff;
+  border: 1px solid var(--apple-border-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .apple-category-name {
@@ -1020,6 +1071,12 @@ img {
   margin-bottom: 20px;
 }
 
+.form-row-2, .form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
 .form-label {
   display: block;
   font-size: 13px;
@@ -1031,19 +1088,31 @@ img {
 .form-control {
   width: 100%;
   padding: 12px 16px;
-  font-size: 15px;
+  font-size: 16px; /* 16px prevents iOS Safari auto-zoom */
   font-family: inherit;
   border: 1px solid var(--apple-border);
   border-radius: var(--apple-radius-sm);
   background: #ffffff;
   color: var(--apple-text-primary);
   transition: var(--apple-transition);
+  box-sizing: border-box;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--apple-blue);
   box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+}
+
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236e6e73' d='M6 8.5L1.5 4h9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+  padding-right: 36px;
+  cursor: pointer;
 }
 
 /* Toast */
@@ -1094,6 +1163,38 @@ img {
 
 .card-dark h3, .card-dark h4 {
   color: #ffffff;
+}
+
+.detail-card {
+  background: #ffffff;
+  border-radius: var(--apple-radius-xl);
+  padding: 44px 38px;
+  box-shadow: var(--apple-shadow-subtle);
+  border: 1px solid var(--apple-border-light);
+}
+
+.job-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 28px 32px;
+}
+
+.ai-demo-wrapper {
+  background: #000000;
+  color: #ffffff;
+  border-radius: var(--apple-radius-xl);
+  padding: 44px 38px;
+  box-shadow: var(--apple-shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-demo-input-group {
+  display: flex;
+  gap: 10px;
 }
 
 .btn {
@@ -1179,6 +1280,67 @@ img {
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Contact Page Layout & Cards */
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.contact-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-channel-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.contact-channel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-channel-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.contact-channel-label {
+  font-size: 0.78rem;
+  color: var(--apple-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.contact-channel-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--apple-text-primary);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: inline-block;
+  line-height: 1.45;
+}
+
+a.contact-channel-value:hover {
+  color: var(--apple-blue);
+  text-decoration: underline;
+}
 
 .tech-pills {
   display: flex;
@@ -1450,14 +1612,40 @@ img {
 
   /* Subpage Card Grids */
   .apple-grid-4, .apple-grid-3, .apple-grid-2,
-  .grid-4, .grid-3, .grid-2 {
+  .grid-4, .grid-3, .grid-2,
+  .contact-layout-grid,
+  .form-row-2, .form-grid-2 {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .card, .apple-feature-card {
-    padding: 22px 18px;
-    border-radius: 18px;
+  .card, .apple-feature-card, .detail-card, .ai-demo-wrapper {
+    padding: 22px 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .job-item-card {
+    padding: 20px 16px !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .job-item-card > div:last-child {
+    width: 100%;
+  }
+
+  .job-item-card .btn {
+    width: 100%;
+  }
+
+  .ai-demo-input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-demo-input-group .apple-btn {
+    width: 100%;
   }
 
   .callout-box {

@@ -24,11 +24,11 @@
 <!-- Interactive Live Demo & Dark AI Card -->
 <section class="section" style="padding-top:20px;">
   <div class="container">
-    <div style="background:#000000; color:#ffffff; border-radius:var(--apple-radius-xl); padding:48px 40px; box-shadow:var(--apple-shadow-card); position:relative; overflow:hidden;">
-      <div class="grid grid-2" style="align-items:center; gap:40px; position:relative; z-index:1;">
+    <div class="ai-demo-wrapper">
+      <div class="grid grid-2" style="align-items:center; gap:36px; position:relative; z-index:1;">
         <div>
           <span class="eyebrow" style="color:var(--apple-orange);">Interactive Simulation</span>
-          <h2 style="font-size:2.2rem; font-weight:700; color:white; margin:8px 0 16px;">Test the CTS Semantic Pipeline</h2>
+          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.2rem); font-weight:700; color:white; margin:8px 0 16px;">Test the CTS Semantic Pipeline</h2>
           <p style="color:#a1a1a6; font-size:1rem; line-height:1.6; margin-bottom:24px;">
             Simulate how our vector embeddings and language pipelines respond to queries across ERP records, employee policies, or invoice data.
           </p>
@@ -47,8 +47,8 @@
         </div>
 
         <div>
-          <div style="background:rgba(255, 255, 255, 0.06); border:1px solid rgba(255, 255, 255, 0.15); border-radius:20px; padding:28px; backdrop-filter:blur(20px);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div style="background:rgba(255, 255, 255, 0.06); border:1px solid rgba(255, 255, 255, 0.15); border-radius:20px; padding:24px; backdrop-filter:blur(20px);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.1); flex-wrap:wrap; gap:8px;">
               <div style="display:flex; align-items:center; gap:8px;">
                 <div style="width:10px; height:10px; border-radius:50%; background:#34c759;"></div>
                 <span style="font-size:0.85rem; font-weight:700; color:#ffffff;">DocIntel & ERP AI Engine</span>
@@ -70,9 +70,9 @@
               </button>
             </div>
 
-            <div style="display:flex; gap:10px;">
-              <input type="text" id="aiDemoInput" placeholder="Type a scenario (e.g. document extraction)..." style="flex:1; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:12px 16px; color:white; font-size:0.92rem;">
-              <button id="aiDemoSubmit" class="apple-btn apple-btn-primary" style="padding:10px 20px;">
+            <div class="ai-demo-input-group">
+              <input type="text" id="aiDemoInput" placeholder="Type a scenario (e.g. document extraction)..." style="flex:1; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:12px 16px; color:white; font-size:16px; min-width:0;">
+              <button id="aiDemoSubmit" class="apple-btn apple-btn-primary" style="padding:12px 22px; justify-content:center;">
                 <span id="aiDemoSpinner" style="display:none;">⏳</span>
                 Execute
               </button>
@@ -94,7 +94,9 @@
 
     <div class="grid grid-3">
       <div class="card">
-        <div style="font-size:2rem; margin-bottom:14px;">📄</div>
+        <div style="width:48px; height:48px; border-radius:14px; background:#e8f4fd; color:#0071e3; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
         <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:10px; color:var(--apple-text-primary);">DocIntel OCR & Parsing</h3>
         <p style="color:var(--apple-text-secondary); font-size:0.95rem; line-height:1.6;">
           Automatically convert paper invoices, transport bills, and employee ID proofs into structured JSON database records with zero manual transcription errors.
@@ -102,7 +104,9 @@
       </div>
 
       <div class="card">
-        <div style="font-size:2rem; margin-bottom:14px;">🧠</div>
+        <div style="width:48px; height:48px; border-radius:14px; background:#f3e8ff; color:#7b2cff; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
         <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:10px; color:var(--apple-text-primary);">Enterprise RAG Knowledge</h3>
         <p style="color:var(--apple-text-secondary); font-size:0.95rem; line-height:1.6;">
           Equip your HR, support, and sales teams with an AI assistant trained strictly on your internal policies, standard operating procedures, and product manuals.
@@ -110,7 +114,9 @@
       </div>
 
       <div class="card">
-        <div style="font-size:2rem; margin-bottom:14px;">📈</div>
+        <div style="width:48px; height:48px; border-radius:14px; background:#e6f9ed; color:#34c759; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        </div>
         <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:10px; color:var(--apple-text-primary);">Predictive Operations</h3>
         <p style="color:var(--apple-text-secondary); font-size:0.95rem; line-height:1.6;">
           Identify attendance anomalies, inventory stockout risks, and project deadline bottlenecks before they impact delivery.

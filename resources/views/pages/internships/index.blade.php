@@ -128,7 +128,7 @@
           <input type="text" name="name" class="form-control" placeholder="e.g. Ramesh Kulkarni" required>
         </div>
 
-        <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div class="form-row-2 form-group">
           <div>
             <label class="form-label">Email Address *</label>
             <input type="email" name="email" class="form-control" placeholder="ramesh@gmail.com" required>
@@ -139,7 +139,7 @@
           </div>
         </div>
 
-        <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div class="form-row-2 form-group">
           <div>
             <label class="form-label">College / Institute *</label>
             <input type="text" name="college" class="form-control" placeholder="e.g. Pune Institute of Computer Technology" required>
@@ -150,7 +150,7 @@
           </div>
         </div>
 
-        <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div class="form-row-2 form-group">
           <div>
             <label class="form-label">Graduation Year *</label>
             <select name="graduation_year" class="form-control form-select" required>
