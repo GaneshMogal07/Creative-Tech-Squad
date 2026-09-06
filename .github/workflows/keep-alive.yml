@@ -1,18 +1,24 @@
-name: Keep Render Service Awake
+name: Keep Render Service Awake 24x7
 
 on:
   schedule:
-    # Runs every 5 minutes automatically via GitHub Actions
+    # Trigger every 5 minutes
     - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
   keep_alive:
-    name: Ping Health Endpoint
+    name: Ping Health Endpoint Every 2 Mins
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Creative Tech Squad Production URL
+      - name: Send Continuous Pings to Keep Server Awake
         run: |
-          echo "Sending keep-alive ping to https://creativetechsquad.in/health..."
-          response=$(curl -s -o /dev/null -w "%{http_code}" -m 30 https://creativetechsquad.in/health || true)
-          echo "Response code: $response"
+          for i in {1..3}; do
+            echo "Ping $i: Sending keep-alive request to https://creativetechsquad.in/health..."
+            curl -s -f -m 30 https://creativetechsquad.in/health || true
+            if [ $i -lt 3 ]; then
+              echo "Waiting 90 seconds before next ping..."
+              sleep 90
+            fi
+          done
+          echo "Keep-alive pulse finished successfully."
